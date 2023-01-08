@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/JAVA-ADVANCED-SOFTUNI.iml" filepath="$PROJECT_DIR$/.idea/JAVA-ADVANCED-SOFTUNI.iml" />
       <module fileurl="file://$PROJECT_DIR$/StacksAndQueues-Lab/StacksAndQueues-Lab.iml" filepath="$PROJECT_DIR$/StacksAndQueues-Lab/StacksAndQueues-Lab.iml" />
+      <module fileurl="file://$PROJECT_DIR$/StacksandQueues-Exercises/StacksandQueues-Exercises.iml" filepath="$PROJECT_DIR$/StacksandQueues-Exercises/StacksandQueues-Exercises.iml" />
     </modules>
   </component>
 </project>
