@@ -14,7 +14,7 @@ public class PoisonousPlants_09 {
         int daysCount = 0;
 
 
-        while (w){
+        while (true){
             daysCount++;
             int memoryLastPlant = plantsQueue.poll();
             newPlantsQueue = new ArrayDeque<>();
@@ -36,7 +36,7 @@ public class PoisonousPlants_09 {
 
 
         }
-        System.out.println(daysCount);
-        System.out.println(newPlantsQueue);
+        //System.out.println(daysCount);
+      //  System.out.println(newPlantsQueue);
     }
 }
