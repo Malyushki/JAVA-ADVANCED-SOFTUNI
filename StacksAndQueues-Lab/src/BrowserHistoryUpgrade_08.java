@@ -22,7 +22,7 @@ public class BrowserHistoryUpgrade_08 {
 
 
             }else {
-                System.out.println(backUrlStack.push(command));
+                System.out.println(backUrlStack.push());
             }
             command = scanner.nextLine();
         }
