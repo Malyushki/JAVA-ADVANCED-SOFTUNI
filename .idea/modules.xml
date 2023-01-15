@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/JAVA-ADVANCED-SOFTUNI.iml" filepath="$PROJECT_DIR$/.idea/JAVA-ADVANCED-SOFTUNI.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MultidimensionalArrays-Exercises/MultidimensionalArrays-Exercises.iml" filepath="$PROJECT_DIR$/MultidimensionalArrays-Exercises/MultidimensionalArrays-Exercises.iml" />
       <module fileurl="file://$PROJECT_DIR$/MultidimensionalArrays-Lab/MultidimensionalArrays-Lab.iml" filepath="$PROJECT_DIR$/MultidimensionalArrays-Lab/MultidimensionalArrays-Lab.iml" />
       <module fileurl="file://$PROJECT_DIR$/StackAndQueuesREDO/StackAndQueuesREDO.iml" filepath="$PROJECT_DIR$/StackAndQueuesREDO/StackAndQueuesREDO.iml" />
       <module fileurl="file://$PROJECT_DIR$/StacksAndQueues-Lab/StacksAndQueues-Lab.iml" filepath="$PROJECT_DIR$/StacksAndQueues-Lab/StacksAndQueues-Lab.iml" />
