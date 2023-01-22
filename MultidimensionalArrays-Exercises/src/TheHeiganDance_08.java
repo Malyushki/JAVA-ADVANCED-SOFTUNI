@@ -37,7 +37,7 @@ public class TheHeiganDance_08 {
                     int cloudRow = Integer.parseInt(command[1]);
                     int cloudCol = Integer.parseInt(command[2]);
                     chamber = CloudSpell(chamber, cloudRow, cloudCol);
-                    heroPosition = PlayerMovement(chamber, heroPosition);
+                 //   heroPosition = PlayerMovement(chamber, heroPosition);
                     System.out.println(Arrays.toString(heroPosition));
                     cloudSpellMemory.add(new ArrayList<>(Arrays.asList(3, cloudRow, cloudCol)));
                     heroHealthPoints += chamber[heroPosition[0]][heroPosition[1]];

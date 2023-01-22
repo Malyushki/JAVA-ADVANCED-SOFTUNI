@@ -14,7 +14,7 @@ public class E_TheHeiganDance_08 {
         String bossAttack = scanner.nextLine();
 
         List<int[]> cloudSpellMemory = new ArrayList<>();
-        while (heroHP > 0) {
+        while (true) {
             bossHP -= heroDP;
 
             String currentSpell = bossAttack.split("\\s+")[0];
