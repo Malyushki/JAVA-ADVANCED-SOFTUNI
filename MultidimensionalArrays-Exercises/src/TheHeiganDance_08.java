@@ -1,169 +1,120 @@
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
 
 public class TheHeiganDance_08 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        double heroAttackPoints = Double.parseDouble(scanner.nextLine());
-        double[][] chamber = new double[15][15];
-        for (int row = 0; row < 15; row++) {
-            for (int col = 0; col < 15; col++) {
 
-                chamber[row][col] = 0;
+        double heiganHP = 3000000;
+        int playerHP = 18500;
+        double playerAP = Double.parseDouble(scanner.nextLine());
+        int[][] chamber = new int[15][15];
+        int[] playerCoordinates = {7,7};
+        String command = scanner.nextLine();
+        String lastSpell = "";
+        int lastSpellRow = -1;
+        int lastSpellCol = -1;
+        while (true){
+            heiganHP -= playerAP;
+            String[]   commandParts =   command.split("\\s+");
+
+            if (lastSpell.equals("Cloud")&&inDangerArea(playerCoordinates,lastSpellRow,lastSpellCol)){
+                playerHP -=3500;
             }
-        }
-        double heroHealthPoints = 18500;
-        double heiganHealthPoints = 3000000;
-        //     int heroRow = 7;
-        //   int heroCol = 7;
-        int[] heroPosition = {7, 7};
-        //    System.out.println(Arrays.deepToString(chamber));
-        List<List<Integer>> cloudSpellMemory = new ArrayList<>();
-        while (heroHealthPoints > 0) {
-            String[] command = scanner.nextLine().split("\\s+");
-            heiganHealthPoints -= heroAttackPoints;
-            if (heiganHealthPoints <= 0) {
-                System.out.println("Heigan: Defeated!");
-                System.out.printf("Player: %.0f%n", heroHealthPoints);
-                System.out.printf("Final position: %d, %d%n", heroPosition[0], heroPosition[1]);
+
+            String spellName = commandParts[0];
+            int spellRow = Integer.parseInt(commandParts[1]);
+            int spellCol = Integer.parseInt(commandParts[2]);
+             lastSpellRow = spellRow;
+             lastSpellCol = spellCol;
+            if (checkIfDead(heiganHP,  playerHP,  lastSpell, playerCoordinates)){
                 return;
             }
 
-            switch (command[0]) {
+            switch (spellName){
                 case "Cloud":
-                    int cloudRow = Integer.parseInt(command[1]);
-                    int cloudCol = Integer.parseInt(command[2]);
-                    chamber = CloudSpell(chamber, cloudRow, cloudCol);
-                    heroPosition = PlayerMovement(chamber, heroPosition);
-                    System.out.println(Arrays.toString(heroPosition));
-                    cloudSpellMemory.add(new ArrayList<>(Arrays.asList(3, cloudRow, cloudCol)));
-                    heroHealthPoints += chamber[heroPosition[0]][heroPosition[1]];
+                    if (inDangerArea(playerCoordinates,spellRow,spellCol)){
+                        heroMovement(playerCoordinates,spellRow,spellCol);
+                        if (inDangerArea(playerCoordinates,spellRow,spellCol)){
+                            playerHP -=3500;
+                        }
+
+                    }
                     break;
                 case "Eruption":
-
-                    int eruptionRow = Integer.parseInt(command[1]);
-                    int eruptionCol = Integer.parseInt(command[2]);
-                    chamber = EruptionSpell(chamber, eruptionRow, eruptionCol);
-
-
-                    heroPosition = PlayerMovement(chamber, heroPosition,eruptionRow,eruptionCol);
-                    System.out.println(Arrays.toString(heroPosition));
-                    heroHealthPoints += chamber[heroPosition[0]][heroPosition[1]];
-
-                    System.out.println(heroHealthPoints);
-                    chamber = EruptionSpellDeSpell(chamber, eruptionRow, eruptionCol);
-                    break;
-
-
-            }
-
-
-            for (List<Integer> e : cloudSpellMemory) {
-                e.set(0, e.get(0) - 1);
-                if (e.get(0) == 0) {
-                    int rows = e.get(1);
-                    int cols = e.get(2);
-                    for (int row = rows - 1; row <= rows + 1; row++) {
-                        for (int col = cols - 1; col <= cols + 1; col++) {
-                            if (row < 0 || row >= 15 || col < 0 || col >= 15) {
-                                continue;
-                            } else {
-                                chamber[row][col] = 0;
+                    if (inDangerArea(playerCoordinates,spellRow,spellCol)){
+                            heroMovement(playerCoordinates,spellRow,spellCol);
+                            if (inDangerArea(playerCoordinates,spellRow,spellCol)){
+                                playerHP -=6000;
                             }
-                        }
+
                     }
 
-                    e.set(0, -1);
-                }
-
+                    break;
             }
 
+
+           if (checkIfDead(heiganHP,  playerHP,  lastSpell, playerCoordinates)){
+               return;
+           }
+            lastSpell = spellName;
+
+
+            command = scanner.nextLine();
+
         }
-
-
 
 
     }
-
-    static double[][] EruptionSpell(double[][] chamber, int eruptionRow, int eruptionCol) {
-
-        for (int row = eruptionRow - 1; row <= eruptionRow + 1; row++) {
-            for (int col = eruptionCol - 1; col <= eruptionCol + 1; col++) {
-                if (row < 0 || row >= 15 || col < 0 || col >= 15) {
-                    continue;
-                } else {
-                    chamber[row][col] -= 6000;
-                }
+    private static boolean inDangerArea(int[] playerCoordinates , int spellRow, int spellCol){
+       int playerRow = playerCoordinates[0];
+       int playerCol = playerCoordinates[1];
+        for (int row = spellRow-1; row <=spellRow+1 ; row++) {
+            for (int col = spellCol-1; col <=spellCol+1 ; col++) {
+            if (playerRow == row && playerCol == col){
+                return true;
+            }
             }
         }
 
 
-        return chamber;
+        return false;
     }
+    private static void heroMovement( int[] heroCoordinates,int damagedRow, int damagedCol ) {
+        int heroRow = heroCoordinates[0];
+        int heroCol = heroCoordinates[1];
 
-    static double[][] CloudSpell(double[][] chamber, int cloudRow, int cloudCol) {
 
-        for (int row = cloudRow - 1; row <= cloudRow + 1; row++) {
-            for (int col = cloudCol - 1; col <= cloudCol + 1; col++) {
-                if (row < 0 || row >= 15 || col < 0 || col >= 15) {
-                    continue;
-                } else {
-                    chamber[row][col] -= 3500;
-                }
+            if (heroRow - 1 > damagedRow + 1 || heroRow - 1 < damagedRow - 1) {
+                heroCoordinates[0] = heroRow - 1;
             }
-        }
+            if (heroCol + 1 > damagedCol + 1 || heroCol + 1 < damagedCol - 1) {
+                heroCoordinates[1] = heroCol + 1;
+
+            }
+            if (heroRow+1>damagedRow+1 || heroRow+1<damagedRow-1) {
+                heroCoordinates[0] = heroRow + 1;
+            }
+            if (heroCol-1>damagedCol+1 || heroCol-1<damagedCol-1) {
+                heroCoordinates[1] = heroCol - 1;
+
+            }
 
 
-        return chamber;
     }
-
-    static double[][] EruptionSpellDeSpell(double[][] chamber, int eruptionRow, int eruptionCol) {
-
-        for (int row = eruptionRow - 1; row <= eruptionRow + 1; row++) {
-
-            for (int col = eruptionCol - 1; col <= eruptionCol + 1; col++) {
-                if (row < 0 || row >= 15 || col < 0 || col >= 15) {
-                    continue;
-                } else {
-
-                    chamber[row][col] = 0;
-                }
+    private static boolean checkIfDead(double heiganHP, int playerHP, String lastSpell, int[]playerCoordinates){
+        if (heiganHP<=0 || playerHP<=0){
+            lastSpell = lastSpell.contains("Cloud")?"Plague Cloud":"Eruption";
+            System.out.printf(heiganHP<=0 ? "Heigan: Defeated!%n" : "Heigan: %.2f%n",heiganHP);
+            if (playerHP<=0){
+                System.out.printf("Player: Killed by %s%n",lastSpell);
+            }else {
+                System.out.printf("Player: %d%n",playerHP);
             }
+            System.out.printf("Final position: %d, %d%n",playerCoordinates[0],playerCoordinates[1]);
+            return true;
         }
-
-
-        return chamber;
-    }
-
-    static int[] PlayerMovement(double[][] chamber, int[] heroPosition, int attackRow, int attackCol) {
-        int heroRow = heroPosition[0];
-        int heroCol = heroPosition[1];
-
-        if (chamber[heroRow][heroCol] < 0) {
-            if (chamber[heroRow - 1][heroCol] == 0 && heroRow - 1 >= 0) {
-                heroRow--;
-            } else if (chamber[heroRow][heroCol + 1] == 0 && heroCol + 1 < 15) {
-                heroCol++;
-            } else if (chamber[heroRow + 1][heroCol] == 0 && heroRow + 1 < 15) {
-                heroRow++;
-
-            } else if (chamber[heroRow][heroCol - 1] == 0 && heroCol - 1 >= 0) {
-                heroCol--;
-            }
-        }
-        heroPosition[0] = heroRow;
-        heroPosition[1] = heroCol;
-        return heroPosition;
+        return false;
     }
 }
-
-
-/* for printing
-for (double[] cell:chamber) {
-                        System.out.println(Arrays.toString(cell));
-                    }
-                    System.out.println("****************");
- */
