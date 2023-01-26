@@ -1,3 +1,4 @@
+<<<<<<< .mine
 import java.util.*;
 
 public class TheMatrix_12 {
@@ -75,3 +76,82 @@ public class TheMatrix_12 {
 
 
     }
+=======
+import java.util.Scanner;
+
+public class TheMatrix_12 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> .theirs

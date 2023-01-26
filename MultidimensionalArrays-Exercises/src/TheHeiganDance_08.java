@@ -34,13 +34,25 @@ public class TheHeiganDance_08 {
 
             switch (spellName){
                 case "Cloud":
+<<<<<<< .mine
                     if (inDangerArea(playerCoordinates,spellRow,spellCol)){
-                        heroMovement(playerCoordinates,spellRow,spellCol);
+=======
+                    int cloudRow = Integer.parseInt(command[1]);
+>>>>>>> .theirs
+                    int cloudCol = Integer.parseInt(command[2]);
+<<<<<<< .mine
                         if (inDangerArea(playerCoordinates,spellRow,spellCol)){
                             playerHP -=3500;
                         }
 
                     }
+=======
+                    chamber = CloudSpell(chamber, cloudRow, cloudCol);
+                 //   heroPosition = PlayerMovement(chamber, heroPosition);
+                    System.out.println(Arrays.toString(heroPosition));
+                    cloudSpellMemory.add(new ArrayList<>(Arrays.asList(3, cloudRow, cloudCol)));
+                    heroHealthPoints += chamber[heroPosition[0]][heroPosition[1]];
+>>>>>>> .theirs
                     break;
                 case "Eruption":
                     if (inDangerArea(playerCoordinates,spellRow,spellCol)){
