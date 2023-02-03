@@ -5,13 +5,14 @@
 
 
 import java.util.ArrayDeque;
+import java.util.PriorityQueue;
 import java.util.Scanner;
 
 public class MathPotato_07 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String [] names = scanner.nextLine().split("\\s+");
-        ArrayDeque<String> queue = new ArrayDeque<>();
+        PriorityQueue<String> queue = new PriorityQueue <>();
         for (String e:names) {
             queue.offer(e);
         }

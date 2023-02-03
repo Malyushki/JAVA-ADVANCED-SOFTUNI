@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/DefiningClasses-Exercises/DefiningClasses-Exercises.iml" filepath="$PROJECT_DIR$/DefiningClasses-Exercises/DefiningClasses-Exercises.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/JAVA-ADVANCED-SOFTUNI.iml" filepath="$PROJECT_DIR$/.idea/JAVA-ADVANCED-SOFTUNI.iml" />
       <module fileurl="file://$PROJECT_DIR$/MultidimensionalArrays-Exercises/MultidimensionalArrays-Exercises.iml" filepath="$PROJECT_DIR$/MultidimensionalArrays-Exercises/MultidimensionalArrays-Exercises.iml" />
       <module fileurl="file://$PROJECT_DIR$/MultidimensionalArrays-Lab/MultidimensionalArrays-Lab.iml" filepath="$PROJECT_DIR$/MultidimensionalArrays-Lab/MultidimensionalArrays-Lab.iml" />
