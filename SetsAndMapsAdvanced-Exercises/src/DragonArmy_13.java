@@ -1,53 +1,54 @@
 import java.util.*;
 
-class Dragon {
-    String name;
-    private int damage;
-    private int health;
-    private int armor;
 
-    public Dragon(String name, String damage, String health, String armor) {
-        this.name = name;
-        this.damage = Integer.parseInt(damage);
-        this.health = Integer.parseInt(health);
-        this.armor = Integer.parseInt(armor);
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getDamage() {
-        return damage;
-    }
-
-    public int getHealth() {
-        return health;
-    }
-
-    public int getArmor() {
-        return armor;
-    }
-
-    public void setDamage(int damage) {
-        this.damage = damage;
-    }
-
-    public void setHealth(int health) {
-        this.health = health;
-    }
-
-    public void setArmor(int armor) {
-        this.armor = armor;
-    }
-
-    @Override
-    public String toString() {
-        return String.format("-%s -> damage: %d, health: %d, armor: %d", this.name, this.damage, this.health, this.armor);
-    }
-}
 
 public class DragonArmy_13 {
+    public static class Dragon {
+        String name;
+        private int damage;
+        private int health;
+        private int armor;
+
+        public Dragon(String name, String damage, String health, String armor) {
+            this.name = name;
+            this.damage = Integer.parseInt(damage);
+            this.health = Integer.parseInt(health);
+            this.armor = Integer.parseInt(armor);
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public int getDamage() {
+            return damage;
+        }
+
+        public int getHealth() {
+            return health;
+        }
+
+        public int getArmor() {
+            return armor;
+        }
+
+        public void setDamage(int damage) {
+            this.damage = damage;
+        }
+
+        public void setHealth(int health) {
+            this.health = health;
+        }
+
+        public void setArmor(int armor) {
+            this.armor = armor;
+        }
+
+        @Override
+        public String toString() {
+            return String.format("-%s -> damage: %d, health: %d, armor: %d", this.name, this.damage, this.health, this.armor);
+        }
+    }
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int n = Integer.parseInt(scanner.nextLine());
@@ -101,16 +102,25 @@ public class DragonArmy_13 {
             double averageDamage = 0;
             double averageHealth = 0;
             double averageArmor = 0;
+            int counter = 0;
 
             for (String name : entry.getValue()) {
+
+
                 for (Dragon e : dragonsList) {
-                    averageDamage += e.getDamage();
-                    averageHealth += e.getHealth();
-                    averageArmor += e.getArmor();
+                    if (e.getName().equals(name)) {
+                        averageDamage += e.getDamage();
+                        averageHealth += e.getHealth();
+                        averageArmor += e.getArmor();
+                        counter++;
+                    }
                 }
 
-            }
 
+            }
+            averageDamage /= counter;
+            averageHealth /= counter;
+            averageArmor /=counter;
 
                 System.out.printf("%s::(%.2f/%.2f/%.2f)%n",entry.getKey(),averageDamage,averageHealth,averageArmor);
 
