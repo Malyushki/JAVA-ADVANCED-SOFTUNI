@@ -15,7 +15,11 @@
       <module fileurl="file://$PROJECT_DIR$/StackAndQueuesREDO/StackAndQueuesREDO.iml" filepath="$PROJECT_DIR$/StackAndQueuesREDO/StackAndQueuesREDO.iml" />
       <module fileurl="file://$PROJECT_DIR$/StacksAndQueues-Lab/StacksAndQueues-Lab.iml" filepath="$PROJECT_DIR$/StacksAndQueues-Lab/StacksAndQueues-Lab.iml" />
       <module fileurl="file://$PROJECT_DIR$/StacksandQueues-Exercises/StacksandQueues-Exercises.iml" filepath="$PROJECT_DIR$/StacksandQueues-Exercises/StacksandQueues-Exercises.iml" />
+<<<<<<< Updated upstream
       <module fileurl="file://$PROJECT_DIR$/xEXAMS/xEXAMS.iml" filepath="$PROJECT_DIR$/xEXAMS/xEXAMS.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/StreamsFilesAndDirectories-Exercises/StreamsFilesAndDirectories-Exercises.iml" filepath="$PROJECT_DIR$/StreamsFilesAndDirectories-Exercises/StreamsFilesAndDirectories-Exercises.iml" />
+>>>>>>> Stashed changes
     </modules>
   </component>
 </project>
