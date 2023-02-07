@@ -1,0 +1,20 @@
+1. Fill ArrayDeque stack with Stream:
+Arrays.stream(scanner.nextLine().split(",\\s+"))
+                .mapToInt(Integer::parseInt).forEach("ArrayDeque"::push);
+______________________________________________________________________________
+2. Fill ArrayDeque que with Stream:
+Arrays.stream(scanner.nextLine().split(",\\s+"))
+                .mapToInt(Integer::parseInt).forEach(energyDrinksSequence::offer);
+_______________________________________________________________________________
+3.Print MAP and sorted by KEY and print only Value bigger than 0:
+
+             chocolates.entrySet()
+                .stream()
+                .sorted(Comparator.comparing(Map.Entry::getKey))
+                .forEach(c -> {
+                            if (c.getValue() > 0) {
+                                System.out.printf("# %s --> %d%n", c.getKey(), c.getValue());
+                            }
+                        }
+                );
+_______________________________________________________________________________
