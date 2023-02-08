@@ -1,3 +1,5 @@
+package EXAMS.Java_Advanced_Exam_22October2022.src;
+
 import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.Scanner;

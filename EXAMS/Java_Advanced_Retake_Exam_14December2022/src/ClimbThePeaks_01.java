@@ -1,3 +1,5 @@
+package EXAMS.Java_Advanced_Retake_Exam_14December2022.src;
+
 import java.util.*;
 
 public class ClimbThePeaks_01 {
