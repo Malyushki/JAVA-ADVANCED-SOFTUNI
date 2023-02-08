@@ -1,4 +1,4 @@
-package JavaAdvancedRetakeExam_18August2021;
+package EXAMS.JavaAdvancedRetakeExam_18August2021;
 
 import java.util.*;
 
