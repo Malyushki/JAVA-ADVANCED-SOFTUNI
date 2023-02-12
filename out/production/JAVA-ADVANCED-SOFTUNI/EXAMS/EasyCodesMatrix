@@ -1,0 +1,40 @@
+1. Fill String matrix, Scanner разделени по интервал:
+
+ private static void fillMatrix(String[][] matrix, Scanner scanner) {
+        for (int row = 0; row < matrix.length; row++) {
+            matrix[row] = scanner.nextLine().split("\\s+");
+        }
+    }
+
+    _________________________________________________________________
+    2. Print Matrix:
+      private static void printMatrix(String[][] matrix) {
+            for (String[] element : matrix) {
+                System.out.println(Arrays.toString(element).replaceAll("[\\[\\],]", ""));
+            }
+        }
+
+    _______________________________________________________________________
+    3. Намиране на кординати на елемент в матрица.
+
+     private static int[] findElementInMatrix(String[][] matrix, String element) {
+            int[] coordinates = new int[2];
+            for (int row = 0; row < matrix.length; row++) {
+                for (int col = 0; col < matrix[0].length; col++) {
+                    if (matrix[row][col].equals(element)) {
+                        coordinates[0] = row;
+                        coordinates[1] = col;
+                    }
+                }
+            }
+
+            return coordinates;
+        }
+
+        4. Прверка на границите на матрицата:
+
+        private static boolean isInBoundaries(String[][] matrix, int row, int col) {
+                return (row >= 0 && row < matrix.length) && (col >= 0 && col < matrix[row].length);
+            }
+
+           ______________________________________
