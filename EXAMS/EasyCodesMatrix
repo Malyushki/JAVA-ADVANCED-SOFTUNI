@@ -38,3 +38,33 @@
             }
 
            ______________________________________
+ 5. Движение на обект:
+
+ private static void moveElement(String[][] matrix, int currentRow, int currentCol, String direction) {
+     switch (direction) {
+         case "up":
+             if (isInBoundaries(matrix, currentRow - 1, currentCol)) {
+                 currentRow--;
+             }
+
+             break;
+         case "down":
+             if (isInBoundaries(matrix, currentRow + 1, currentCol)) {
+                 currentRow++;
+             }
+
+             break;
+         case "left":
+             if (isInBoundaries(matrix, currentRow, currentCol - 1)) {
+                 currentCol--;
+             }
+
+             break;
+         case "right":
+             if (isInBoundaries(matrix, currentRow, currentCol + 1)) {
+                 currentCol++;
+             }
+
+             break;
+     }
+ }
