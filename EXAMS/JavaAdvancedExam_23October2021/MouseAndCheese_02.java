@@ -65,6 +65,57 @@ public class MouseAndCheese_02 {
                 eatenCheese++;
                 territoryMatrix[currentRow][currentCol] = "-";
             }
+            if (territoryMatrix[currentRow][currentCol].equals("B")) {
+                territoryMatrix[currentRow][currentCol] = "-";
+
+                switch (command) {
+                    case "up":
+                        if (isInBoundaries(territoryMatrix, currentRow - 1, currentCol)) {
+                            currentRow--;
+                        } else {
+                            mouseIsOut = true;
+                        }
+                        break;
+                    case "down":
+                        if (isInBoundaries(territoryMatrix, currentRow + 1, currentCol)) {
+                            currentRow++;
+                        } else {
+
+                            mouseIsOut = true;
+
+                        }
+                        break;
+                    case "left":
+                        if (isInBoundaries(territoryMatrix, currentRow, currentCol - 1)) {
+                            currentCol--;
+                        } else {
+
+                            mouseIsOut = true;
+                        }
+
+                        break;
+                    case "right":
+                        if (isInBoundaries(territoryMatrix, currentRow, currentCol + 1)) {
+                            currentCol++;
+                        } else {
+
+                            mouseIsOut = true;
+                        }
+
+                        break;
+                }
+
+
+
+
+
+
+
+            }
+            if (territoryMatrix[currentRow][currentCol].equals("c")) {
+                eatenCheese++;
+                territoryMatrix[currentRow][currentCol] = "-";
+            }
 
             command = scanner.nextLine();
         }

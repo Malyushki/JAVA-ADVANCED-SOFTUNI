@@ -40,31 +40,40 @@
            ______________________________________
  5. Движение на обект:
 
- private static void moveElement(String[][] matrix, int currentRow, int currentCol, String direction) {
-     switch (direction) {
-         case "up":
-             if (isInBoundaries(matrix, currentRow - 1, currentCol)) {
-                 currentRow--;
-             }
+     private static int[] playerMovement(String[][] matrix, int row, int col, String direction) {
+         int[] coordinates = new int[2];
+            switch (direction) {
+             case "up":
+                 if (isInBoundaries(matrix, row - 1, col)) {
+                     row = row - 1;
+                 } else {
+                     row = matrix[0].length - 1;
+                 }
+                 break;
+             case "down":
+                 if (isInBoundaries(matrix, row + 1, col)) {
+                     row = row + 1;
+                 } else {
+                     row = 0;
+                 }
+                 break;
+             case "left":
+                 if (isInBoundaries(matrix, row, col - 1)) {
+                     col = col - 1;
+                 } else {
+                     col = matrix.length - 1;
+                 }
+                 break;
+             case "right":
+                 if (isInBoundaries(matrix, row, col + 1)) {
+                     col = col + 1;
+                 } else {
+                     col = 0;
+                 }
 
-             break;
-         case "down":
-             if (isInBoundaries(matrix, currentRow + 1, currentCol)) {
-                 currentRow++;
-             }
-
-             break;
-         case "left":
-             if (isInBoundaries(matrix, currentRow, currentCol - 1)) {
-                 currentCol--;
-             }
-
-             break;
-         case "right":
-             if (isInBoundaries(matrix, currentRow, currentCol + 1)) {
-                 currentCol++;
-             }
-
-             break;
+                 break;
+         }
+         coordinates[0] = row;
+         coordinates[1] = col;
+         return coordinates;
      }
- }
