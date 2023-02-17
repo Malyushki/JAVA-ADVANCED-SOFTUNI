@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="sanctuary">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/sanctuary/sanctuary.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
