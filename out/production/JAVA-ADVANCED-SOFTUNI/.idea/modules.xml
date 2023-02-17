@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/DefiningClasses-Exercises/DefiningClasses-Exercises.iml" filepath="$PROJECT_DIR$/DefiningClasses-Exercises/DefiningClasses-Exercises.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EXAMS/EXAMS.iml" filepath="$PROJECT_DIR$/EXAMS/EXAMS.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/JAVA-ADVANCED-SOFTUNI.iml" filepath="$PROJECT_DIR$/.idea/JAVA-ADVANCED-SOFTUNI.iml" />
+      <module fileurl="file://$PROJECT_DIR$/examsClasses/JavaAdvancedExam_22October2022/JavaAdvancedExam_22October2022.iml" filepath="$PROJECT_DIR$/examsClasses/JavaAdvancedExam_22October2022/JavaAdvancedExam_22October2022.iml" />
       <module fileurl="file://$PROJECT_DIR$/xEXAMS/Java_Advanced_Exam_22October2022/Java_Advanced_Exam_22October2022.iml" filepath="$PROJECT_DIR$/xEXAMS/Java_Advanced_Exam_22October2022/Java_Advanced_Exam_22October2022.iml" />
       <module fileurl="file://$PROJECT_DIR$/xEXAMS/Java_Advanced_Exam_25June2022/Java_Advanced_Exam_25June2022.iml" filepath="$PROJECT_DIR$/xEXAMS/Java_Advanced_Exam_25June2022/Java_Advanced_Exam_25June2022.iml" />
       <module fileurl="file://$PROJECT_DIR$/xEXAMS/Java_Advanced_Retake_Exam_14December2022/Java_Advanced_Retake_Exam_14December2022.iml" filepath="$PROJECT_DIR$/xEXAMS/Java_Advanced_Retake_Exam_14December2022/Java_Advanced_Retake_Exam_14December2022.iml" />
@@ -15,8 +17,7 @@
       <module fileurl="file://$PROJECT_DIR$/StackAndQueuesREDO/StackAndQueuesREDO.iml" filepath="$PROJECT_DIR$/StackAndQueuesREDO/StackAndQueuesREDO.iml" />
       <module fileurl="file://$PROJECT_DIR$/StacksAndQueues-Lab/StacksAndQueues-Lab.iml" filepath="$PROJECT_DIR$/StacksAndQueues-Lab/StacksAndQueues-Lab.iml" />
       <module fileurl="file://$PROJECT_DIR$/StacksandQueues-Exercises/StacksandQueues-Exercises.iml" filepath="$PROJECT_DIR$/StacksandQueues-Exercises/StacksandQueues-Exercises.iml" />
-      <module fileurl="file://$PROJECT_DIR$/EXAMS/EXAMS.iml" filepath="$PROJECT_DIR$/EXAMS/EXAMS.iml" />
-
+      <module fileurl="file://$PROJECT_DIR$/examsClasses/examsClasses.iml" filepath="$PROJECT_DIR$/examsClasses/examsClasses.iml" />
     </modules>
   </component>
 </project>

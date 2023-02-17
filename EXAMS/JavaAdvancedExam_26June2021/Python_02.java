@@ -127,5 +127,9 @@ public class Python_02 {
         coordinates[1] = col;
         return coordinates;
     }
+    public static int countFood(){
+
+
+    }
 
 }
