@@ -128,8 +128,8 @@ public class Python_02 {
         return coordinates;
     }
     public static int countFood(){
+return 0;
 
-
-    }
+    };
 
 }
